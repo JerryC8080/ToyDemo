@@ -1,5 +1,5 @@
 {
-  "name": "cache",
+  "name": "cache-in-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "node-heapdump.js",

@@ -1,0 +1,10 @@
+{
+  "server": "120.55.151.247:8080",
+  "appid": "2161",
+  "secret": "ebccf88f221bc2ac001a2230e0f698d6036b6491",
+  "heartbeatInterval": 60,
+  "reconnectDelay": 10,
+  "reportInterval": 60,
+  "logdir": "/tmp/",
+  "cmddir": "/usr/local/alinode-commands"
+}

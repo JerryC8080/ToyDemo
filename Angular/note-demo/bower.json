@@ -1,0 +1,23 @@
+{
+  "name": "note-demo",
+  "homepage": "https://github.com/JerryC8080/ToyDemo",
+  "authors": [
+    "JerryC <huangjerryc@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "ng-lodash": "^0.5.0"
+  }
+}

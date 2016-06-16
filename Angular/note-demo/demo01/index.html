@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Demo1</title>
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="BoxCtrl">
+      <div style="width: 100px; height: 100px; background-color: red;" ng-click="click()"></div>
+      <p>{{w}} x {{h}}</p>
+      <p>
+        W: <input type="text" ng-model="w">
+      </p>
+      <p>
+        H: <input type="text" ng-model="h">
+      </p>
+    </div>
+
+    <script type="text/javascript" charset="uft-8">
+      var app = angular.module('MyApp', [], function() {
+        console.log('Angular Bootstrap');
+      });
+
+      app.controller('BoxCtrl', function($scope, $element) {
+        console.log($element);
+        var e = $element.children().eq(0);
+        console.log(e);
+        $scope.w = e.width;
+        $scope.h = e.height;
+        
+        $scope.click = function() {
+          $scope.w = parseInt($scope.w) + 10;
+          $scope.h = parseInt($scope.h) + 10;
+        }
+
+        $scope.$watch('w', function(to, from) {
+          e.width = to;
+        });
+
+        $scope.$watch('h', function(to, from) {
+          e.height = to;
+        });
+      });
+
+    </script>
+  </body>
+</html>

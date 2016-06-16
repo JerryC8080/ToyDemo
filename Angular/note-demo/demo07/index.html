@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='MyApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Demo 5</title>
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+  </head>
+
+  <body ng-controller="TestCtrl">
+    <div>
+      Search: <input type="text" ng-model="query">
+      <br/>
+      Sort By: 
+      <select ng-model="orderProp">
+        <option value="name">By Name</option>
+        <option value="age">By Age</option>
+      </select>
+      Current Sort By: {{orderProp}}
+    </div>
+    <hr/>
+    <div>
+      <p ng-repeat="user in users | filter:query | orderBy:orderProp" >
+        <span>
+          <img ng-src="{{user.avatar}}" alt="">
+        </span>
+        <span>{{user.name}}</span>
+        <span>{{user.age}}</span>
+        <hr/>
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      var app = angular.module('MyApp', [], function() {
+        console.log('Angular boottrap');
+      });
+      app.controller('TestCtrl' ,['$scope', '$http', function($scope, $http) {
+        $http.get('/users.json')
+          .success(function(data) {
+            $scope.users = data;
+          });
+        
+        $scope.orderProp = 'name';        
+      }]);
+    </script>
+  </body>
+</html>
